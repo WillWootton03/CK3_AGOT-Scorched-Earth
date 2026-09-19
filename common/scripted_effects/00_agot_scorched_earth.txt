@@ -1,5 +1,14 @@
-# Spawns a random dragon (age 30-50), grants $OWNER$ the dragonrider trait
+﻿# Spawns a random dragon (age 30-50), grants $OWNER$ the dragonrider trait,
+# and flags $TITLE$ so it can never grant another dragon again, even if the
+# title is later destroyed and recreated.
 agot_trigger_dragon_on_duchy_creation = {
+    $TITLE$ = {
+        set_variable = {
+            name = agot_scorched_earth_dragon_granted
+            value = yes
+        }
+    }
+
     create_character = {
         location = $OWNER$.location
         trait = dragon

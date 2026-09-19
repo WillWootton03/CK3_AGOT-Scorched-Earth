@@ -5,7 +5,9 @@
  game_rule_category_agot_dragons:0 "AGOT - Dragons"
 
  rule_agot_scorched_earth:0 "#R AGOT:#! Scorched Earth"
- setting_agot_scorched_earth_enabled:0 "Scorched Earth Enabled"
- setting_agot_scorched_earth_enabled_desc:0 "All landed characters will be given a dragon upon claiming a duchy title.\n@warning_icon! #X In order for this to work, you must have Shattered Worlds Enabled to #bold counties or counties even#!.#!"
  setting_agot_scorched_earth_disabled:0 "Scorched Earth Disabled"
  setting_agot_scorched_earth_disabled_desc:0 "Game will remain base agot logic"
+ setting_agot_scorched_earth_independent_only:0 "Independent Duchies Only"
+ setting_agot_scorched_earth_independent_only_desc:0 "Only independent rulers are given a dragon upon claiming a duchy title. Vassals of another ruler will not.\n@warning_icon! #X Shattered Worlds #bold counties or counties even#! must be enabled.#!"
+ setting_agot_scorched_earth_all_duchies:0 "All Duchies"
+ setting_agot_scorched_earth_all_duchies_desc:0 "All landed characters are given a dragon upon claiming a duchy title, including vassals of another ruler.\n@warning_icon! #X Shattered Worlds #bold counties or counties even#! must be enabled.#!"

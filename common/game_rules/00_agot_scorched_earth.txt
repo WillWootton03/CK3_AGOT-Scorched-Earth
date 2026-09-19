@@ -1,9 +1,12 @@
-agot_scorched_earth = {
+﻿agot_scorched_earth = {
     categories = {
         agot
         agot_dragons
     }
 
-    agot_scorched_earth_enabled = {}
+    default = agot_scorched_earth_disabled
+
     agot_scorched_earth_disabled = {}
+    agot_scorched_earth_independent_only = {}
+    agot_scorched_earth_all_duchies = {}
 }

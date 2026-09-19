@@ -781,16 +781,28 @@ on_title_gain = {
 			limit = {
 				scope:title.tier = tier_duchy
 			}
-
+			# SCORCHED_EARTH 
 			if = {
 				limit = {
-					has_game_rule = agot_scorched_earth_enabled
+					NOT = { has_game_rule = agot_scorched_earth_disabled }
 					OR = {
 						has_game_rule = agot_shatter_to_counties
 						has_game_rule = agot_shatter_to_counties_even
 					}
+					scope:title = {
+						recent_history = {
+							type = created
+							days = 1
+						}
+						NOT = { has_variable = agot_scorched_earth_dragon_granted }
+					}
+					NOT = { has_trait = dragonrider }
+					OR = {
+						root = { is_independent_ruler = yes }
+						has_game_rule = agot_scorched_earth_all_duchies
+					}
 				}
-				agot_trigger_dragon_on_duchy_creation = { OWNER = root }
+				agot_trigger_dragon_on_duchy_creation = { OWNER = root TITLE = scope:title }
 			}
 
 			# Special Legitimacy gain for being elected (This is present in two places in this on_action)
