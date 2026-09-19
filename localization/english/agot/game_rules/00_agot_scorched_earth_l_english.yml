@@ -1,0 +1,11 @@
+﻿l_english:
+
+ game_rule_category_agot:0 "AGOT"
+ game_rule_category_agot_canon:0 "AGOT - Canon"
+ game_rule_category_agot_dragons:0 "AGOT - Dragons"
+
+ rule_agot_scorched_earth:0 "#R AGOT:#! Scorched Earth"
+ setting_agot_scorched_earth_enabled:0 "Scorched Earth Enabled"
+ setting_agot_scorched_earth_enabled_desc:0 "All landed characters will be given a dragon upon claiming a duchy title.\n@warning_icon! #X In order for this to work, you must have Shattered Worlds Enabled to #bold counties or counties even#!.#!"
+ setting_agot_scorched_earth_disabled:0 "Scorched Earth Disabled"
+ setting_agot_scorched_earth_disabled_desc:0 "Game will remain base agot logic"

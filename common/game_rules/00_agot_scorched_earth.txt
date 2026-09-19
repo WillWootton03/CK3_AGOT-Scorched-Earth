@@ -1,0 +1,9 @@
+agot_scorched_earth = {
+    categories = {
+        agot
+        agot_dragons
+    }
+
+    agot_scorched_earth_enabled = {}
+    agot_scorched_earth_disabled = {}
+}

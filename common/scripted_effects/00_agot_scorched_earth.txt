@@ -1,0 +1,33 @@
+# Spawns a random dragon (age 30-50), grants $OWNER$ the dragonrider trait
+agot_trigger_dragon_on_duchy_creation = {
+    create_character = {
+        location = $OWNER$.location
+        trait = dragon
+        age = { 30 50 }
+        template = agot_dragon_template
+        random_traits = no
+        save_scope_as = dragon
+    }
+
+    $OWNER$ = {
+        if = {
+            limit = { NOT = { has_trait = dragonrider } }
+            add_trait = dragonrider
+        }
+    }
+
+    agot_bond_dragon_relation_effect = {
+        ACTOR = $OWNER$
+        DRAGON = scope:dragon
+    }
+
+    $OWNER$ = {
+        send_interface_message = {
+            type = event_generic_good_text
+            title = agot_spawn_dragon_effect.interface.t
+            desc = agot_spawn_dragon_effect.interface.desc
+
+            left_icon = scope:dragon
+        }
+    }
+}
