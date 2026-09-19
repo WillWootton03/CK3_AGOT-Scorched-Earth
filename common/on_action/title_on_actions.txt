@@ -784,6 +784,7 @@ on_title_gain = {
 			# SCORCHED_EARTH 
 			if = {
 				limit = {
+					NOT = { has_global_variable = is_game_start_date }
 					NOT = { has_game_rule = agot_scorched_earth_disabled }
 					OR = {
 						has_game_rule = agot_shatter_to_counties
@@ -795,6 +796,8 @@ on_title_gain = {
 							days = 1
 						}
 						NOT = { has_variable = agot_scorched_earth_dragon_granted }
+						NOT = { is_landless_type_title = yes }
+						NOT = { is_mercenary_company = yes }
 					}
 					NOT = { has_trait = dragonrider }
 					OR = {
