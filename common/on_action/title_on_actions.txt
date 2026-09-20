@@ -781,32 +781,6 @@ on_title_gain = {
 			limit = {
 				scope:title.tier = tier_duchy
 			}
-			# SCORCHED_EARTH 
-			if = {
-				limit = {
-					NOT = { has_global_variable = is_game_start_date }
-					NOT = { has_game_rule = agot_scorched_earth_disabled }
-					OR = {
-						has_game_rule = agot_shatter_to_counties
-						has_game_rule = agot_shatter_to_counties_even
-					}
-					scope:title = {
-						recent_history = {
-							type = created
-							days = 1
-						}
-						NOT = { has_variable = agot_scorched_earth_dragon_granted }
-						NOT = { is_landless_type_title = yes }
-						NOT = { is_mercenary_company = yes }
-					}
-					NOT = { has_trait = dragonrider }
-					OR = {
-						root = { is_independent_ruler = yes }
-						has_game_rule = agot_scorched_earth_all_duchies
-					}
-				}
-				agot_trigger_dragon_on_duchy_creation = { OWNER = root TITLE = scope:title }
-			}
 
 			# Special Legitimacy gain for being elected (This is present in two places in this on_action)
 			if = {
@@ -2738,6 +2712,51 @@ on_title_gain = {
 				is_independent_ruler = yes
 			}
 			house = { set_house_head = root }
+		}
+
+		# SCORCHED_EARTH
+		if = {
+			limit = {
+				NOT = { has_global_variable = is_game_start_date }
+				NOT = { has_game_rule = agot_scorched_earth_disabled }
+				scope:title = {
+					recent_history = {
+						type = created
+						days = 1
+					}
+					NOT = { has_variable = agot_scorched_earth_dragon_granted }
+					NOT = { is_landless_type_title = yes }
+					NOT = { is_mercenary_company = yes }
+				}
+				NOT = { has_trait = dragonrider }
+				OR = {
+					AND = {
+						scope:title.tier = tier_duchy
+						OR = {
+							AND = {
+								root = { is_independent_ruler = yes }
+								has_game_rule = agot_scorched_earth_independent_duchies_only
+							}
+							has_game_rule = agot_scorched_earth_all_duchies
+						}
+					}
+					AND = {
+						scope:title.tier = tier_kingdom
+						OR = {
+							AND = {
+								root = { is_independent_ruler = yes }
+								has_game_rule = agot_scorched_earth_independent_kingdoms_only
+							}
+							has_game_rule = agot_scorched_earth_all_kingdoms
+						}
+					}
+					AND = {
+						has_game_rule = agot_scorched_earth_min_tier_empire
+						scope:title.tier = tier_empire
+					}
+				}
+			}
+			agot_trigger_dragon_on_duchy_creation = { OWNER = root TITLE = scope:title }
 		}
 
 		if = { # If courtiers get lost between governorship assignments, move them home

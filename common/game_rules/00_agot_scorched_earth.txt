@@ -7,6 +7,12 @@
     default = agot_scorched_earth_disabled
 
     agot_scorched_earth_disabled = {}
-    agot_scorched_earth_independent_only = {}
+
+    agot_scorched_earth_independent_duchies_only = {}
     agot_scorched_earth_all_duchies = {}
+
+    agot_scorched_earth_independent_kingdoms_only = {}
+    agot_scorched_earth_all_kingdoms = {}
+
+    agot_scorched_earth_min_tier_empire = {}
 }
